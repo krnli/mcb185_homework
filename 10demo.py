@@ -208,11 +208,11 @@ def molecular_weight_dna(m):
      else: return None
 print(molecular_weight_dna('T'))
 
-def complement_dna(b):
-     if b == 'A': return 'T'
-     elif m == 'T': return 'A'
-     elif m == 'G': return 'C'
-     elif m == 'C': return 'G'
+def complement_dna(nt):
+     if nt == 'A': return 'T'
+     elif nt == 'T': return 'A'
+     elif nt == 'G': return 'C'
+     elif nt == 'C': return 'G'
      else: return None
 print(complement_dna('A'))
 
