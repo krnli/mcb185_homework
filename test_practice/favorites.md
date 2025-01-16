@@ -1,16 +1,17 @@
-# Favorite's List #
+# Favorite's List 
+------------------
 
-## Food ##
+## Food 
 + Ice cream
 + Burrito
 + Tacos
 
-## Songs ##
-+ Breakeven by The Script
-+ Love Lost by Mac Miller
-+ Yellow by Coldplay
+## Songs 
++ Mac Miller
+    * Good News
+    * Love Lost
 
-## Hobbies ##
+## Hobbies 
 + Drawing
 + Playing games
 + Watching videos
