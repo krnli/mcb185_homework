@@ -8,7 +8,7 @@
 
 ## Songs 
 + Mac Miller
-    * Good News
+    * **Good News**
     * Love Lost
 
 ## Hobbies 
