@@ -15,3 +15,7 @@
 + Drawing
 + Playing games
 + Watching videos
+
+## Colors
++ Orange
++ Pink
