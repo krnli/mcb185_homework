@@ -224,3 +224,5 @@ def maximum(a, b, c):
     elif c > a and c > b: return print (c)
 maximum(1, 6, 2)
 
+def entropy(A, C, G, T):
+    return 
