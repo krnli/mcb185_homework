@@ -1,6 +1,6 @@
 
 *.save
-ecoli.gff.gz
+LICENSE
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
