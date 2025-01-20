@@ -224,5 +224,22 @@ def maximum(a, b, c):
     elif c > a and c > b: return print (c)
 maximum(1, 6, 2)
 
+def scores(tP, fP, tN, fN):
+     sensitivity = tP / (tP + fN)
+     specificity = tN / (tN + fP)
+     precision = tP / (tP + fP)
+     F1 = (2 * precision * sensitivity) / (precision + sensitivity)
+     return print("Sensitivity = ", round(sensitivity, 3), "\nSpecificity = ", round(specificity, 3), "\nF1 = ", round(F1, 3))
+     # return print(f'Sensitvity = {sensitivity:.2f}\nSpecificity = {specificity:.2f}\nF1 = {F1:.2f}')
+scores(80, 20, 90, 10)
+
 def entropy(A, C, G, T):
-    return 
+    tot = A + C + G + T
+    eA, eC, eG, eT = 0, 0, 0, 0
+    if A != 0: eA = (A / tot) * math.log2(A / tot)
+    if C != 0: eC = (C / tot) * math.log2(C / tot)
+    if G != 0: eG = (G / tot) * math.log2(G / tot)
+    if T != 0: eT = (T / tot) * math.log2(T / tot)
+    entropy = -1 * (eA + eC + eG + eT)
+    return print(entropy)
+entropy(0,0,0,0)
