@@ -243,3 +243,10 @@ def entropy(A, C, G, T):
     entropy = -1 * (eA + eC + eG + eT)
     return print(entropy)
 entropy(0,0,0,0)
+
+import random
+
+while True:
+     a = random.randint(1, 10)
+     b = random.randint(1, 10)
+     c = print(a, b, pythagoras(a, b))

@@ -3,7 +3,7 @@ import math
 # Testing Functions
 def char_to_prob(c):
     return print(c, ord(c))
-char_to_prob('Z')
+char_to_prob('A')
 
 def prob_to_char(p):
     if type(p) == int: print(p, chr(p))
@@ -27,5 +27,5 @@ def phred_error_rate(q):
     elif type(q) == float: 
         Q = -math.log10(q) * 10
         return print(round(Q, ndigits = 0))
-phred_error_rate(16)
+phred_error_rate(32)
 phred_error_rate(0.00032)
