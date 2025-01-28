@@ -21,11 +21,12 @@ From Google: a phred quality score of 'Q' is directly related to an error rate
 """
 
 def phred_error_rate(q):
-    if type(q) == int: 
-        E = 10 ** (-q / 10)
-        return print(round(E, ndigits = 5))
-    elif type(q) == float: 
+    if type(q) == float: 
         Q = -math.log10(q) * 10
-        return print(round(Q, ndigits = 0))
-phred_error_rate(32)
-phred_error_rate(0.00032)
+        Q = round(Q)
+        return print(chr(Q + 33))
+    elif type(q) == str:
+        Q = 10 ** (-(ord(q) - 33) / 10)
+        return print(round(Q, ndigits = 5))
+phred_error_rate('B')
+phred_error_rate(0.501)

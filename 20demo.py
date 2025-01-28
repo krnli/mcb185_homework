@@ -77,25 +77,42 @@ def factorial(n):
     for i in range(1, n + 1):
         fact = fact * i
     return fact
-print(factorial(0))
+print(factorial(5))
+
 
 def euler(n):
     euler = 0
-    for n in range(n + 1):
-        euler = 1 / factorial(n)
-    return euler
-print(euler(5))
+    while True:
+        for i in range(0, n + 1, 1):
+            euler = euler + 1 / factorial(i)
+        return euler
+print(euler(15))
+
+"""
+euler = 0
+i = 0
+while True:
+    euler = euler + 1 / factorial(i)
+    i = i + 1
+    print(euler)
+"""
 
 
+"""
 def prime(n):
-    for i in range (1,10,1):
-        if n % i != n: return print('Not a prime number')
-    if n == 1 or n == 2: return print('Prime')
-prime(1)
-prime(2)
-prime(3)
+    for i in range(2, n+1, 1):
+        if n / i != 1: return print('not prime')
+        else: return print('prime')
+
+prime(1) # prime
+prime(2) # prime
+prime(3) # prime
 prime(4)
-prime(5)
-prime(7)
+prime(5) # prime
+prime(7) # prime
 prime(8)
 prime(9)
+
+"""
+
+

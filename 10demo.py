@@ -250,3 +250,5 @@ while True:
      a = random.randint(1, 10)
      b = random.randint(1, 10)
      c = print(a, b, pythagoras(a, b))
+
+
