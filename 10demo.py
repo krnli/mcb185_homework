@@ -230,7 +230,6 @@ def scores(tP, fP, tN, fN):
      precision = tP / (tP + fP)
      F1 = (2 * precision * sensitivity) / (precision + sensitivity)
      return print("Sensitivity = ", round(sensitivity, 3), "\nSpecificity = ", round(specificity, 3), "\nF1 = ", round(F1, 3))
-     # return print(f'Sensitvity = {sensitivity:.2f}\nSpecificity = {specificity:.2f}\nF1 = {F1:.2f}')
 scores(80, 20, 90, 10)
 
 def entropy(A, C, G, T):
@@ -246,9 +245,10 @@ entropy(0,0,0,0)
 
 import random
 
+"""
 while True:
      a = random.randint(1, 10)
      b = random.randint(1, 10)
      c = print(a, b, pythagoras(a, b))
 
-
+"""
