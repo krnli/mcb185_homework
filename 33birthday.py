@@ -12,6 +12,6 @@ for i in range(people):
 
 same_birthdays = 0
 for thing in birthdays:
-    if thing in birthdays[thing+1:]: same_birthdays += 1
+    for thing in birthdays[thing+1:]: same_birthdays += 1
 
 print(same_birthdays/trials)
