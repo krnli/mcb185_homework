@@ -28,5 +28,5 @@ def phred_error_rate(q):
     elif type(q) == str:
         Q = 10 ** (-(ord(q) - 33) / 10)
         return print(round(Q, ndigits = 5))
-phred_error_rate('B')
+phred_error_rate('A')
 phred_error_rate(0.501)
