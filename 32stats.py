@@ -2,16 +2,15 @@ import sys
 import math
 
 # adding CL arguments to list and sorting
-number = 0
+
 values = []
 for arg in sys.argv[1:]:
-    number += 1
     n = float(arg)
     values.append(n)
-    values.sort()
 
 # finding max and min
 
+values.sort()
 min = values[0]
 max = values[len(values)-1]
         
@@ -29,7 +28,7 @@ std = math.sqrt(variance / N)
 
 # median value
 
-for median in values:
+for n in values:
     if N % 2 == 0: 
         half = int(N / 2)
         median = (values[half] + values[half-1]) / 2
@@ -37,11 +36,25 @@ for median in values:
         half = int((N + 1) / 2)
         median = (values[half-1])
 
+# n50
+
+half = total / 2
+length = 0
+for n in values:
+    length += n
+    print(length)
+    if length > half: 
+        n50 = n
+        break
+
+
 print()
 print(values)
-print(f'Number of values: {number}')
+print(f'Number of values: {N}')
 print(f'Maximun: {max}')
 print(f'Minimum: {min}')
 print(f'Mean: {mean:.3f}')
 print(f'Standard deviation: {std:.3f}')
 print(f'Median: {median}')
+print(f'N50: {n50}')
+

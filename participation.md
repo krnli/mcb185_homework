@@ -39,13 +39,13 @@ more than one point per category. There is a maximum of 5 points each week.
 - Week 3
 	+ Attended class Tuesday
 	+ Attended class Thursday
-	+ Met Yusuf today
+	+ Introduced myself to Yusuf
 	+ Total 3 points
 - Week 4
 	+ Attended class Tuesday
 	+ Attended class Thursday
 	+ Assessed in class
-	+ Met Justin today
+	+ Introduced myself to Justin
 	+ Total 4 points
 - Week 5
 	+ Attended class Thursday
@@ -53,7 +53,10 @@ more than one point per category. There is a maximum of 5 points each week.
 - Week 6
 	+ Total 0 points
 - Week 7
-	+ 
+	+ Attended class Thursday
+	+ Assessed in class
+	+ Introduced myself to Orlando
+	+ Total 3 points
 - Week 8
 - Week 9
 - Week 10
