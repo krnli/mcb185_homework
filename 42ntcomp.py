@@ -57,3 +57,32 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
     print(name, end=' ')
     for n in counts: print(n/len(seq), end=' ')
     print()
+
+# Counting any letter
+
+for defline, seq in mcb185.read_fasta(sys.argv[1]):
+    defwords = defline.split()
+    name = defwords[0]
+    nts = []
+    counts = []
+    for nt in seq:
+        if nt not in nts:
+            nts.append(nt)
+            counts.append(0)
+        idx = nts.index(nt)
+        counts[idx] += 1
+    print(name)
+    for nt, n in zip(nts, counts):
+        print(nt, n, n/len(seq))
+    print()
+
+# counting with str.count()
+
+for defline, seq in mcb185.read_fasta(sys.argv[1]):
+    defwords = defline.split()
+    name = defwords[0]
+    print(name, end=' ')
+    for nt in 'ACGTN':
+        print(seq.count(nt)/len(seq), end=' ')
+    print()
+

@@ -217,6 +217,15 @@ for position in range(len(seq)-2):
     frame = position % 3 + 1
     print(f'{position+1}\t{frame}\t{seq[position: position+3]}')
 
+'''
+seq = 'ATGCTGTAA'
+for nt in range(len(seq) - 2):
+    frame = nt % 3 + 1
+    codon = seq[nt:nt+3]
+    print(f'{nt+1}\t{frame}\t{codon}')'''
+
+
+
 # in class unit 3 material
 
 dna = 'AGCGCTAGCTACC'

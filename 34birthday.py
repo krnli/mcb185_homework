@@ -7,13 +7,11 @@ people = int(sys.argv[3])
 
 same_bd = 0
 for trial in range(trials):
-    calendar = []
-    for date in range(days):
-        calendar.append(date)
+    calendar = [0] * days
     for person in range(people):
-        birthday = random.randint(0, days-1)
-        calendar.append(birthday)
-        if calendar.count(birthday) == 3: 
+        bd = random.randint(0, days-1)
+        calendar[bd] += 1
+        if calendar[bd] >= 2: 
             same_bd += 1
             break
 

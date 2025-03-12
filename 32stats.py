@@ -33,8 +33,8 @@ for n in values:
         half = int(N / 2)
         median = (values[half] + values[half-1]) / 2
     if N % 2 != 0:
-        half = int((N + 1) / 2)
-        median = (values[half-1])
+        half = int((N - 1) / 2)
+        median = (values[half])
 
 # n50
 
@@ -42,7 +42,6 @@ half = total / 2
 length = 0
 for n in values:
     length += n
-    print(length)
     if length > half: 
         n50 = n
         break

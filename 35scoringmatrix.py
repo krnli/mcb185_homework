@@ -1,20 +1,21 @@
 import sys
 
-alphabet = sys.argv[1]
+# ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+alph = sys.argv[1]
 match = sys.argv[2]
 mismatch = sys.argv[3]
 
-alph = []
-for letter in alphabet:
-    alph.append(letter)
-header = '  '.join(alph)
-print('  ', header)
-
+column = []
 for letter in alph:
-    table = []
-    for header in alph:
-        if letter == header: table.append(match)
-        else: table.append(mismatch)
-        line = ' '.join(table)
-    print(f'{letter} {line}')
+    column.append(letter)
+head = '  '.join(column)
+print('  ', head)
 
+for letter_row in alph:
+    row = [letter_row]
+    for letter_column in alph:
+        if letter_row == letter_column: row.append(match)
+        else: row.append(mismatch)
+    row = ' '.join(row)
+    print(row)

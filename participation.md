@@ -58,5 +58,9 @@ more than one point per category. There is a maximum of 5 points each week.
 	+ Introduced myself to Orlando
 	+ Total 3 points
 - Week 8
+	+ Attended class Thursday
+	+ Total 1 point
 - Week 9
+	+ Attended class Tuesday
+	+
 - Week 10
