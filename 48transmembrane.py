@@ -16,26 +16,29 @@ avg_kd_trans = 2
 def hyd_score(window):
     kd = 0
     for aa in window:
-        if aa not in letter_code or aa == 'P' or aa == 'G': return False
+        if aa not in letter_code or aa == 'P': return False
         idx = letter_code.index(aa)
         hyd = hydropathy_score[idx]
         kd += hyd
-    return kd
+    return kd/len(window)
 
 name = ''
+num_prot = 0
 for defline, protein in mcb185.read_fasta(fileseq):
     if not len(protein) > 41: continue
     for i in range(0, 30 - win_sig + 1):
         win = protein[i:i+win_sig]
         kd = hyd_score(win)
         if kd < avg_kd_sig or kd == False: continue
-        if kd >= avg_kd_sig: break
+        if kd >= avg_kd_sig: 
+            break
     if not kd >= avg_kd_sig: continue
     for i in range(30, len(protein) - win_trans + 1):
         win = protein[i:i+win_trans]
         kd = hyd_score(win)
         if kd < avg_kd_trans or kd == False: continue
-        if kd >= avg_kd_trans: break
+        if kd >= avg_kd_trans: 
+            break
     if not kd >= avg_kd_trans: continue
     name = defline[:80]
     print(name) 

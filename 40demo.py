@@ -73,6 +73,8 @@ import mcb185
 
 # Assessment practice
 
+'''
+#statistics problem 1
 fileseq = sys.argv[1]
 
 tot_len = 0
@@ -90,14 +92,32 @@ for defline, seq in mcb185.read_fasta(fileseq):
 
 # finding median
 
-middle = num_seq % 2
-if middle == 0: 
-    seq_len[seq_len/2] 
+seq_len.sort()
+half = num_seq % 2
+if half == 0:   # if there are even number of sequences
+    median = seq_len[(num_seq/2) - 1] + seq_len[(num_seq/2)]
+if half != 0:
+    median = seq_len[(num_seq-1)/2]
        
-    
-
 
 print(f'Number of sequences: {num_seq}')
 print(f'Mininum length: {min}')
 print(f'Maximum length: {max}')
-print(f'Mean length: {tot_len/num_seq}')
+print(f'Median length: {median}')
+print(f'Mean length: {tot_len/num_seq}')'''
+
+# generate random FASTA files
+
+import random
+
+aas = ['I', 'V', 'L', 'F', 'C', 'M', 'A', 'G', 'T', 'S', 'W', 'Y', 'P', 'H', 'E', 'Q', 'D', 'N', 'K', 'R', '*']
+
+for seqs in range(10):
+    seq = ['M']
+    while True:
+        indx = random.randint(0,20)
+        seq.append(aas[indx])
+        if aas[indx] == '*': 
+            protein = ''.join(seq)
+            print(protein)
+            break

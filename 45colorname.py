@@ -12,7 +12,7 @@ def dtc(P, Q):
 	return d
 
 P = [R, G, B]
-min = 3000
+min = 3000 	# max distance between 2 color values = 3 * 1000
 
 with open(colorfile) as fp:
 	for line in fp:
