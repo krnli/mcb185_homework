@@ -1,43 +1,34 @@
 import sys
 import math
 import mcb185
-'''
+
 dna = sys.argv[1]
 window = int(sys.argv[2])
 entropy = float(sys.argv[3])
 
-fsequence = []
-nts = 'ACGT'''
-'''
+nts = 'ACGT'
+
 for defline, seq in mcb185.read_fasta(dna):
-    for nt in range(len(seq)-window+1):
-        if nt == 0:
-            for base in seq[nt:nt+window-1]:
-                fsequence.append(base)
+    dust = list(seq)
+    for nt in range(len(seq) - window + 1):
         counts = [0] * len(nts)
         for base in seq[nt:nt+window]:
             indx = nts.index(base)
             counts[indx] = counts[indx] + 1
-        h = 0
-        probs = []
-        for count in counts:
-            prob = count/window
-            if prob == 0: continue
-            h -= prob * math.log2(prob)
-        if h >= entropy: 
-            fsequence.append(seq[nt+window-1])
+            h = 0
+            for count in counts:
+                prob = count/window
+                if prob != 0: h -= prob * math.log2(prob)
         if h < entropy: 
-            for i in range(20):
-                fsequence.pop() 
-            fsequence.append('N' * window)
-    seq_f = ''.join(fsequence)
+            dust[nt:nt+window] = ['N'] * window
+    finalseq = ''.join(dust)
 
 print(f'>{defline}\n')
-for i in range(0, 200, 60):
-    print(f'{seq_f[i:i+60]}')'''
+for i in range(0, len(finalseq)-60+1, 60):
+    print(f'{finalseq[i:i+60]}')
 
 # in class example
-
+'''
 import sys
 import mcb185
 import argparse
@@ -77,4 +68,44 @@ for defline, seq in mcb185.read_fasta(arg.fasta):
     print('>',defline, sep='')
     mask = ''.join(mask)
     for i in range(0, len(seq), arg.wrap):
-        print(mask[i:i+arg.wrap])
+        print(mask[i:i+arg.wrap])'''
+
+# Discord example
+'''
+import sys
+import mcb185
+import math
+
+w = sys.argv[2]
+w = int(w)
+entropy_threshold = sys.argv[3]
+entropy_threshold = float(entropy_threshold)
+
+    
+for defline, seq in mcb185.read_fasta(sys.argv[1]):
+    defwords = defline.split()
+    newseq = list(seq)
+    print(defline)
+    for i in range(len(seq) - w + 1):
+        window = seq[i:i+w]
+        a = window.count('A')
+        t = window.count('T')
+        c = window.count('C')
+        g = window.count('G')
+        if a > 0: a_p = a / w
+        else: a_p = 0
+        if t > 0: t_p = t / w
+        else: t_p = 0
+        if c > 0: c_p = c / w
+        else: c_p = 0
+        if g > 0: g_p = g / w
+        else: g_p = 0
+        h = 0
+        for p in [a_p, t_p, c_p, g_p]:
+            if p > 0:
+                h -= p * math.log2(p)
+        if h < entropy_threshold:
+            newseq[i:i+w] = ['N'] * w
+    string_newseq = ''.join(newseq)
+    for i in range(0,300,60):
+        print(string_newseq[i:i+60])'''

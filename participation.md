@@ -66,4 +66,6 @@ more than one point per category. There is a maximum of 5 points each week.
 - Week 10
 	+ Attended class Tuesday
 	+ Introduced myself to Sohail
-	
+	+ Total 2 points
+
+Grand total 24 points 
