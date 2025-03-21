@@ -42,6 +42,6 @@ for defline, seq in mcb185.read_fasta(dna):
             fsequence.append('N' * window)
     seq_f = ''.join(fsequence)
 
-print(f'>{defline}\n')
+print(f'>{defline}')
 for i in range(0, 200, 60):
     print(f'{seq_f[i:i+60]}')

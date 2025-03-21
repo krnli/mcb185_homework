@@ -21,7 +21,7 @@ def missing_kmers(seq, k):
             missing_kmer.add(kmer)
     return missing_kmer
 
-k = 8
+k = 1
 for defline, seq in mcb185.read_fasta(dna):  
     while True:
         kmer_set = set()

@@ -40,4 +40,7 @@ import itertools
 for nts in itertools.product('ACGT', repeat=2):
     print(nts)
 
-
+import random
+for i in range(3): 
+    kmer = ''.join(random.choices('ACGT', k=2))
+    print(kmer)
